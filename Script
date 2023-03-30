@@ -1,0 +1,41 @@
+getgenv().on = true
+getgenv().autoswing = true
+getgenv().autobuynextallies = true
+getgenv().autoupgrade = true
+
+--WalkingWinner#9520 for bugs making a discord sever soon
+
+    while autoswing == true do
+        task.wait()
+        if getgenv().on == false then task.wait() else
+    local args = {
+    [1] = "Swing"
+    }
+
+    game:GetService("ReplicatedStorage")._GAME._MODULES.Utilities.NetworkUtility.Functions.Weapon:InvokeServer(unpack(args))
+    end
+end
+while autoupgrade == true do
+    task.wait()
+    if getgenv().on == false then task.wait() else
+        local args = {
+            [1] = "Upgrade",
+         [2] = 1,
+         [3] = 1
+}
+
+        game:GetService("ReplicatedStorage")._GAME._MODULES.Utilities.NetworkUtility.Events.Allies:FireServer(unpack(args))
+    end
+end
+    while autobuynextallies == true do
+        task.wait()
+        if getgenv().on == false then task.wait() else
+   
+local args = {
+    [1] = "Hire"
+}
+
+    game:GetService("ReplicatedStorage")._GAME._MODULES.Utilities.NetworkUtility.Events.Allies:FireServer(unpack(args))
+    wait()
+end
+end
