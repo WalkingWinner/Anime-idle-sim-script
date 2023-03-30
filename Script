@@ -1,3 +1,5 @@
+--WalkingWinner#9520 dm for bugs making a discord server soon
+
 getgenv().on = true
 getgenv().autoswing = true
 getgenv().autobuynextallies = true
